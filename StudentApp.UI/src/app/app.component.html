@@ -1,0 +1,25 @@
+<button (click)="initNewStudent()">Create</button>
+
+<table>
+  <thead>
+    <th>ID</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Student Number</th> 
+    <th>Identification Number</th>
+    <th></th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let student of students">
+      <td>{{ student.id }}</td>
+      <td>{{ student.firstName }}</td>
+      <td>{{ student.lastName }}</td>
+      <td>{{ student.studentNumber }}</td>
+      <td>{{ student.identificationNumber }}</td>
+      <td><button (click)="editStudent(student)">Edit</button></td>
+    </tr>
+  </tbody>
+</table>
+
+<app-edit-student [student]="studentToEdit" (studentsUpdated)="updateStudentList($event)"></app-edit-student>
+

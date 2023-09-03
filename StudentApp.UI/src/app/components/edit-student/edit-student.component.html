@@ -1,0 +1,22 @@
+<div *ngIf="student">
+    <h2>{{student.firstName}}</h2>
+    <div>
+        First Name:
+        <input [(ngModel)]="student.firstName" placeholder="first name"/>
+    </div>
+    <div>
+        Last Name:
+        <input [(ngModel)]="student.lastName" placeholder="last name"/>
+    </div>
+    <div>
+        Student Number:
+        <input [(ngModel)]="student.studentNumber" placeholder="student number"/>
+    </div>
+    <div>
+        Identification Number:
+        <input [(ngModel)]="student.identificationNumber" placeholder="identification number"/>
+    </div>
+    <button (click)="updateStudent(student)" *ngIf="student.id">Save</button>
+    <button (click)="deleteStudent(student)" *ngIf="student.id">Delete</button>
+    <button (click)="createStudent(student)" *ngIf="!student.id">Save</button>
+</div>
