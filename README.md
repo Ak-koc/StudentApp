@@ -1,2 +1,2 @@
 # StudentApp
-sudent application
+student application
